@@ -92,10 +92,10 @@ def analyze(request):
 
     return render(request, 'analyze.html', params)
 
-def ex1(request):
-    sites = ['''For Entertainment youtube video''',
-             '''For Interaction Facebook''',
-             '''For Insight   Ted Talk''',
-             '''For Internship   Intenship''',
-             ]
-    return HttpResponse((sites))
+# def ex1(request):
+#     sites = ['''For Entertainment youtube video''',
+#              '''For Interaction Facebook''',
+#              '''For Insight   Ted Talk''',
+#              '''For Internship   Intenship''',
+#              ]
+#     return HttpResponse((sites))
