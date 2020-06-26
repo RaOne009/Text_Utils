@@ -63,17 +63,21 @@ def analyze(request):
         djtext = analyzed
         # Analyze the text
         # return render(request, 'analyze.html', params)
-    if(extraspaceremover == "on"):
+    
+    if(extraspaceremover=="on"):
         analyzed = ""
         for index, char in enumerate(djtext):
-            if not(djtext[index] == " " and djtext[index+1] == " "):
+            # It is for if a extraspace is in the last of the string
+            if char == djtext[-1]:
+                    if not(djtext[index] == " "):
+                        analyzed = analyzed + char
+
+            elif not(djtext[index] == " " and djtext[index+1]==" "):                        
                 analyzed = analyzed + char
 
-        params = {'purpose': 'Removed extraspace', 'analyzed_text': analyzed}
+        params = {'purpose': 'extraspace NewLines', 'analyzed_text': analyzed}
         djtext = analyzed
-        # Analyze the text
-        # return render(request, 'analyze.html', params)
-
+        
     if (newlineremover == "on"):
         analyzed = ""
         for char in djtext:
